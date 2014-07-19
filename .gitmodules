@@ -1,6 +1,3 @@
 [submodule "zenburn-emacs"]
 	path = zenburn-emacs
 	url = https://github.com/bbatsov/zenburn-emacs.git
-[submodule "solarized-emacs"]
-	path = solarized-emacs
-	url = https://github.com/bbatsov/solarized-emacs.git
