@@ -89,3 +89,7 @@
 ; installed and enabled jedi
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
+
+;enable ido-mode
+(require 'ido)
+(ido-mode t)
