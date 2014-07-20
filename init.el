@@ -69,3 +69,22 @@
         (desktop-save desktop-dirname)))
   (add-hook 'auto-save-hook 'my-desktop-save)
 
+;enable word wrap on startup
+(global-visual-line-mode t)
+
+;Basic setup for el-Get
+;If you wish to ensure that El-Get is available when you load Emacs you can place the following elisp code in your init file. It will detect if el-get is already installed and install it if necessary.
+;The addition of (el-get 'sync) in the code blocks below ensures that any currently installed packages will be initialized and any required packages will be installed.
+;Calling the el-get function is covered in details in the full Info manual.
+;Here is the basic setup to add to your user-init-file (.emacs):
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
