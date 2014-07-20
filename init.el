@@ -7,11 +7,6 @@
      ; For an explanation of the help facility,
      ; type control-h two times in a row.
 
-; Each section in this file is introduced by a
-     ; line beginning with four semicolons; and each
-     ; entry is introduced by a line beginning with
-     ; three semicolons.
-
 ;added custom themes
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
