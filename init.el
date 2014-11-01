@@ -118,3 +118,8 @@
 ;enable ido-mode
 (require 'ido)
 (ido-mode t)
+
+;; Package: yasnippet
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.8.0")
+(require 'yasnippet)
+(yas-global-mode 1)
