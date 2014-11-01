@@ -85,11 +85,24 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/el-get/popup")
 (require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict")
 (require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode t)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 
+;; Package: yasnippet
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.8.0")
+(require 'yasnippet)
+(yas-global-mode 1)
+;; Remove Yasnippet's default tab key binding
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+;; Set Yasnippet's key binding to shift+tab
+(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+(delq 'ac-source-yasnippet ac-sources)
+(setq ac-source-yasnippet nil)
 
 ;enable word wrap on startup
 (global-visual-line-mode t)
@@ -119,7 +132,4 @@
 (require 'ido)
 (ido-mode t)
 
-;; Package: yasnippet
-(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.8.0")
-(require 'yasnippet)
-(yas-global-mode 1)
+
