@@ -1,3 +1,4 @@
+
 ;Christopher Pearce .init.el file
 ;07.19.14
  ;;;; The Help Key
@@ -65,6 +66,31 @@
         (desktop-save desktop-dirname)))
   (add-hook 'auto-save-hook 'my-desktop-save)
 
+;install JDEE
+(add-to-list 'load-path (format "/home/cp/.emacs/"))
+  (autoload 'jde-mode "jde" "JDE mode" t)
+  (setq auto-mode-alist
+        (append '(("\\.java\\'" . jde-mode)) auto-mode-alist))
+
+;remove default indent braces
+(setq c-default-style "linux"
+          c-basic-offset 4)
+
+;require autopair
+(add-to-list 'load-path "~/.emacs.d/elpa/autopair-0.3")
+(require 'autopair)
+(autopair-global-mode)
+
+;;enable auto-complete
+(add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/el-get/popup")
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+
+
 ;enable word wrap on startup
 (global-visual-line-mode t)
 
@@ -85,8 +111,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-
-; installed and enabled jedi
+;;enable jedi autocompletion in python
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 
