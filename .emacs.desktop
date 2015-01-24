@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Jul 20 12:14:18 2014
+;; Created Sat Jan 24 13:23:55 2015
 ;; Desktop file format version 206
 ;; Emacs version 24.3.1
 
@@ -10,42 +10,31 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("add-to-list"))
+(setq search-ring '("yasnippet" "popup" "add-to-list"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/home/cp/.emacs.d/init.el" "/home/cp/Dropbox/Ubuntu/Projects/programarcade/8.py" "/home/cp/Dropbox/Ubuntu/Projects/programarcade/ch14.py"))
+(setq file-name-history '("/home/cp/Dropbox/UML/comp2_docs/comp2/HW1/ToDoList.c" "/home/cp/.emacs.d/init.el" "/home/cp/Dropbox/Ubuntu/Projects/programarcade/8.py" "/home/cp/Dropbox/Ubuntu/Projects/programarcade/ch14.py"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/cp/.emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
-  4292
-  '(4292 nil)
+  "/home/cp/Dropbox/UML/comp2_docs/comp2/HW1/ToDoList.c"
+  "ToDoList.c"
+  'c-mode
+  '(abbrev-mode visual-line-mode global-visual-line-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode)
+  727
+  '(539 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
-  "/home/cp/Dropbox/Ubuntu/Projects/programarcade/ch14.py"
-  "ch14.py"
-  'python-mode
-  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
-  4277
-  '(368 nil)
+  "/home/cp/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(visual-line-mode global-visual-line-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode)
+  3553
+  '(4263 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/cp/Dropbox/Ubuntu/Projects/programarcade/8.py"
-  "8.py"
-  'python-mode
-  '(visual-line-mode global-visual-line-mode linum-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines)))
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
 
