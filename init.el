@@ -132,4 +132,8 @@
 (require 'ido)
 (ido-mode t)
 
+(add-hook 'c-mode-hook
+      (lambda ()
+        (setq compile-command 
+              (concat "gcc -Wall -Werror -std=c99 -ggdb " buffer-file-name))))
 
