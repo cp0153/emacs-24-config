@@ -22,7 +22,7 @@
  '(background-color "#002b36")
  '(background-mode dark)
  '(cursor-color "#839496")
- '(custom-enabled-themes (quote (solarized-dark)))
+ '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "3c9d994e18db86ae397d077b6324bfdc445ecc7dc81bb9d528cd9bba08c1dac1" default)))
  '(fci-rule-color "#383838")
  '(foreground-color "#839496")
@@ -137,3 +137,9 @@
         (setq compile-command 
               (concat "gcc -Wall -Werror -std=c99 -ggdb " buffer-file-name))))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
