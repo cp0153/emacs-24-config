@@ -1,12 +1,11 @@
+;;; init.el --- Christopher Pearce .init.el file 
+;03.05.15
 
-;Christopher Pearce .init.el file
-;07.19.14
- ;;;; The Help Key
-     ; Control-h is the help key;
-     ; after typing control-h, type a letter to
-     ; indicate the subject about which you want help.
-     ; For an explanation of the help facility,
-     ; type control-h two times in a row.
+;;; Commentary: 
+
+;;This is my personal start-up file for GNU Emacs24.
+
+;;; Code:
 
 ;added custom themes
 
@@ -37,7 +36,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;enable global line mode on startup
+;enable global line mode on start-up
 (global-linum-mode t)
 
 ;added package archive links
@@ -46,7 +45,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/#/")))
 
-;set emacs to start fullscreen
+;set Emacs to start fullscreen
 (defun toggle-fullscreen ()
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
@@ -56,7 +55,7 @@
 )
 (toggle-fullscreen)
 
-;set emacs to save buffers on exit
+;set Emacs to save buffers on exit
 (require 'desktop)
   (desktop-save-mode 1)
   (defun my-desktop-save ()
@@ -104,7 +103,7 @@
 (delq 'ac-source-yasnippet ac-sources)
 (setq ac-source-yasnippet nil)
 
-;enable word wrap on startup
+;enable word wrap on start-up
 (global-visual-line-mode t)
 
 ;Basic setup for el-Get
@@ -143,3 +142,6 @@
 (package-initialize)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; End:
+;;; init.el ends here
